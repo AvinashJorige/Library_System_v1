@@ -20,11 +20,12 @@ namespace Library_System_v1
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/popper.min.js",
+                      "~/Scripts/bootstrap_4.min.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap_4.min.css",
                       "~/Content/site.css"));
         }
     }
