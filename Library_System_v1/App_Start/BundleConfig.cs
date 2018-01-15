@@ -9,7 +9,7 @@ namespace Library_System_v1
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Content/assets/plugins/jQuery/jQuery-2.2.0.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -20,13 +20,20 @@ namespace Library_System_v1
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/popper.min.js",
-                      "~/Scripts/bootstrap_4.min.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",
+                      "~/Content/assets/bootstrap/js/bootstrap.min.js",
+                      "~/Content/assets/plugins/slimScroll/jquery.slimscroll.min.js",
+                      "~/Content/assets/plugins/fastclick/fastclick.js",
+                      "~/Content/assets/dist/js/app.min.js",
+                      "~/Content/assets/dist/js/demo.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap_4.min.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/font-awesome.min.css",
+                      "~/Content/assets/dist/css/AdminLTE.min.css",
+                      "~/Content/assets/dist/css/skins/_all-skins.css",
+                      "~/Content/Site.css"));
         }
     }
 }
