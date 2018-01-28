@@ -161,6 +161,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminDashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Staff\StaffAreaRegistration.cs" />
     <Compile Include="Areas\Student\Controllers\StdHomeController.cs" />
@@ -170,9 +171,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ForgetPasswordModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\scripts\AdDashboardScript.js" />
     <Content Include="Content\assets\bootstrap\css\bootstrap.css" />
     <Content Include="Content\assets\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\assets\bootstrap\fonts\glyphicons-halflings-regular.svg" />
@@ -1184,8 +1188,17 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\config\navMenu.json" />
+    <Content Include="Areas\Admin\Views\AdminDashboard\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap_4.min.js" />
+    <Content Include="Scripts\CustomScripts\commAPIService.js" />
+    <Content Include="Scripts\CustomScripts\ForgotPassword.js" />
+    <Content Include="Scripts\CustomScripts\KOFooterScript.js" />
+    <Content Include="Scripts\CustomScripts\LoginScript.js" />
+    <Content Include="Scripts\CustomScripts\StudentRegister.js" />
+    <Content Include="Scripts\CustomScripts\UserLog_RegisterScript.js" />
+    <Content Include="Scripts\GenericScript\GenericScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -1193,6 +1206,13 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-3.4.2.debug.js" />
+    <Content Include="Scripts\knockout-3.4.2.js" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\knockout.validation.js" />
+    <Content Include="Scripts\knockout.validation.min.js" />
+    <Content Include="Scripts\KnockOutLinks.txt" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\respond.js" />
@@ -1214,6 +1234,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutInitalEmpty.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Scripts\knockout.validation.min.js.map" />
+    <Content Include="Views\Login\forgetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1222,7 +1244,6 @@
     <Folder Include="Areas\Staff\Controllers\" />
     <Folder Include="Areas\Staff\Models\" />
     <Folder Include="Areas\Student\Models\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -1231,6 +1252,20 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{842CA3F9-0ADB-4FB3-849A-77742C86380E}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RepositoryDB\RepositoryDB.csproj">
+      <Project>{C9565F79-64AF-40BF-945A-338191AD0FD2}</Project>
+      <Name>RepositoryDB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{04925041-BFA1-43C4-A9AA-DA8C6AF55F81}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

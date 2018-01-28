@@ -1,0 +1,5 @@
+﻿https://github.com/Knockout-Contrib/Knockout-Validation
+
+https://github.com/Knockout-Contrib/Knockout-Validation/wiki/Configuration
+
+http://www.c-sharpcorner.com/article/validation-form-with-knockout-js/

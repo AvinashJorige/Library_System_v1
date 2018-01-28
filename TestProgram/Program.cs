@@ -2,9 +2,8 @@
 using RepositoryDB;
 using RepositoryDB.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using MongoDB.Bson;
+using MongoDB.Driver;
 using System.Threading.Tasks;
 
 namespace TestProgram
@@ -21,20 +20,24 @@ namespace TestProgram
         }
         static async Task MainAsync()
         {
-            var p = new Person()
+            var p = new AdminMaster()
             {
-                FirstName = "John",
-                LastName = "Smith"
+                adCode = "Level 1",
+                adEmail = "jo.avi.1990@gmail.com",
+                adName = "Avinash",
+                adPassword = "123456",
+                CreatedDate = DateTime.UtcNow.ToString(),
+                ModifiedDate = DateTime.UtcNow.ToString(),
+                IsActive = true,
+                Id = ObjectId.GenerateNewId().ToString()
             };
 
             var context = new MongoDataContext();
-            var personRepository = new PersonRepository(context);
+            var personRepository = new GenericRepository<AdminMaster>(context);
 
             await personRepository.SaveAsync(p);
 
-            var personFromDatabase = await personRepository.GetByIdAsync(p.Id);
-
-            Console.WriteLine($"{personFromDatabase.FirstName}, {personFromDatabase.LastName}, id: {personFromDatabase.Id}");
+            var personFromDatabase = await personRepository.GetByIdAsync(p.Id);            
         }
     }
 }

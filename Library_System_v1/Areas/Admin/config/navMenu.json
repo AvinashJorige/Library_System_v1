@@ -1,0 +1,92 @@
+﻿[
+  {
+    "title": "Books",
+    "isVisible": true,
+    "IconClass": "",
+    "customClass": "",
+    "onClick": null,
+    "subItem": [
+      {
+        "title": "Add Books",
+        "isVisible": true,
+        "onClick": "",
+        "IconClass": "",
+        "customClass": ""
+      },
+      {
+        "title": "Modify Books",
+        "isVisible": true,
+        "onClick": "",
+        "IconClass": "",
+        "customClass": ""
+      },
+      {
+        "title": "List of Books",
+        "isVisible": true,
+        "onClick": "",
+        "IconClass": "",
+        "customClass": ""
+      }
+    ]
+  },
+  {
+    "title": "Students",
+    "isVisible": true,
+    "IconClass": "",
+    "customClass": "",
+    "onClick": null,
+    "subItem": [
+      {
+        "title": "Add Student",
+        "isVisible": true,
+        "onClick": "",
+        "IconClass": "",
+        "customClass": ""
+      },
+      {
+        "title": "Modify Students",
+        "isVisible": true,
+        "onClick": "",
+        "IconClass": "",
+        "customClass": ""
+      },
+      {
+        "title": "List of Students",
+        "isVisible": true,
+        "onClick": "",
+        "IconClass": "",
+        "customClass": ""
+      }
+    ]
+  },
+  {
+    "title": "Penalty",
+    "isVisible": true,
+    "IconClass": "",
+    "customClass": "",
+    "onClick": null,
+    "subItem": [
+      {
+        "title": "Add new Penalty",
+        "isVisible": true,
+        "onClick": "",
+        "IconClass": "",
+        "customClass": ""
+      },
+      {
+        "title": "Modify Penalty",
+        "isVisible": true,
+        "onClick": "",
+        "IconClass": "",
+        "customClass": ""
+      },
+      {
+        "title": "Students Penalty",
+        "isVisible": true,
+        "onClick": "",
+        "IconClass": "",
+        "customClass": ""
+      }
+    ]
+  }
+]
