@@ -8,5 +8,6 @@ namespace Library_System_v1.Models
     public class ForgetPasswordModel
     {
         public string Email { get; set; }
+        public string Otp { get; set; }
     }
 }

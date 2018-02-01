@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Cipher.cs" />
+    <Compile Include="EmailService.cs" />
+    <Compile Include="GenerateOTP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SMSsend.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -24,13 +24,33 @@
     <![endif]-->
 </head>
 <body class="hold-transition login-page">
+    <div class="alert alert-danger alert-dismissible" style="display:none">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4><i class="icon fa fa-ban"></i> Alert!</h4>
+        <span class="dangerMsg"></span>
+    </div>
+    <div class="alert alert-info alert-dismissible" style="display:none">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4><i class="icon fa fa-info"></i> Alert!</h4>
+        <span class="infoMsg"></span>
+    </div>
+    <div class="alert alert-warning alert-dismissible" style="display:none">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4><i class="icon fa fa-warning"></i> Alert!</h4>
+        <span class="warningMsg"></span>
+    </div>
+    <div class="alert alert-success alert-dismissible" style="display:none">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h4><i class="icon fa fa-check"></i> Alert!</h4>
+        <span class="successtMsg"></span>
+    </div>
     <div class="login-box">
         <div class="login-logo">
             <a href="../../index2.html"><b>Library</b> System</a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
-            @RenderBody()            
+            @RenderBody()
         </div>
         <!-- /.login-box-body -->
     </div>
@@ -44,21 +64,24 @@
     <script src="~/Scripts/knockout-3.4.2.js"></script>
     <script src="~/Scripts/knockout.mapping-latest.js"></script>
     <script src="~/Scripts/knockout.validation.min.js"></script>
-
+    <script src="~/Scripts/CustomScripts/commAPIService.js"></script>
     @*<script src="~/Scripts/CustomScripts/LoginScript.js" defer="defer"></script>
-    <script src="~/Scripts/CustomScripts/ForgotPassword.js" defer="defer"></script>
-    <script src="~/Scripts/CustomScripts/KOFooterScript.js"></script>*@
+        <script src="~/Scripts/CustomScripts/ForgotPassword.js" defer="defer"></script>
+        <script src="~/Scripts/CustomScripts/KOFooterScript.js"></script>*@
 
     <script src="~/Scripts/CustomScripts/UserLog_RegisterScript.js"></script>
-
     <script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' // optional
-    });
-  });
+        $(function () {
+            $('input').iCheck({
+                checkboxClass: 'icheckbox_square-blue',
+                radioClass: 'iradio_square-blue',
+                increaseArea: '20%' // optional
+            });
+            
+            setTimeout(() => {
+                $(".alert-dismissible").fadeOut(4000);
+            }, 10000);
+        });
     </script>
 </body>
 </html>

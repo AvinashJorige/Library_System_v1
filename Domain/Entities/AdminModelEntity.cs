@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace Domain.Entities
             IsActive = true;
         }
 
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
         public string adCode { get; set; }
         public string adName { get; set; }
         public string adPassword { get; set; }
