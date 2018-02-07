@@ -1,0 +1,15 @@
+﻿.box {
+    border-radius: 0px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+}
+
+.table-bordered {
+    border: 3px solid #aaa;
+}
+
+.box.box-solid>.box-header .btn:hover, .box.box-solid>.box-header a:hover {
+    background: none !important;
+}
+a.box-title.pull-right {
+    margin: 0 auto !important;
+}

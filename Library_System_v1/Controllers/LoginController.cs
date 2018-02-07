@@ -75,7 +75,7 @@ namespace Library_System_v1.Controllers
                                 //Set A Unique ID in session
                                 if (logDetails.adCode == "Admin")
                                 {
-                                    return Json(new { redirectionURL = "/Admin/AdminDashboard/Index", logDetails = logDetails }, JsonRequestBehavior.AllowGet);
+                                    return Json(new { redirectionURL = "/Admin/adDashboard/Index", logDetails = logDetails }, JsonRequestBehavior.AllowGet);
                                 }
                                 else
                                 {

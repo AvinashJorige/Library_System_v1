@@ -18,6 +18,12 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
       folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="~/Content/assets/dist/css/skins/skin-red.min.css">
+    <link href="~/Content/assets/plugins/dynaTable/jquery.dynatable.css" rel="stylesheet" />
+    <link href="~/Content/assets/plugins/datepicker/datepicker3.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/contents/CustomStyles.css" rel="stylesheet" />
+    @RenderSection("styles", required: false)
+
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -59,8 +65,8 @@
                                 <li class="user-header">
                                     <img src="~/Content/assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                     <p>
-                                        <span data-bind="text: userName"></span> - Administrator
-                                        <small>Member since <span data-bind="text: memberSince"></span></small>
+                                        @*<span data-bind="text: userName"></span> - Administrator
+                                        <small>Member since <span data-bind="text: memberSince"></span></small>*@
                                     </p>
                                 </li>
                                 <!-- Menu Footer-->
@@ -89,7 +95,7 @@
                         <img src="~/Content/assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p data-bind="text: userName">sdasd</p>
+                        @*<p data-bind="text: userName">sdasd</p>*@
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
@@ -107,9 +113,9 @@
                             <span>Books</span><i class="fa fa-angle-left pull-right"></i>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Add Book</a></li>
+                            <li><a href="/Admin/adDashboard/NewBooks"><i class="fa fa-circle-o"></i> Add Book</a></li>
                             <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Modified Books</a></li>
-                            <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> List of Books
+                            <li><a href="/Admin/adDashboard/ListBooks"><i class="fa fa-circle-o"></i> List of Books
                                     <span class="label label-primary pull-right">10,000</span></a></li>
                         </ul>
                     </li>
@@ -184,11 +190,17 @@
     <script src="~/Content/assets/dist/js/app.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="~/Content/assets/dist/js/demo.js"></script>
+    <script src="~/Content/assets/plugins/datepicker/bootstrap-datepicker.js"></script>
 
 
     <script src="~/Scripts/knockout-3.4.2.js"></script>
     <script src="~/Scripts/knockout.mapping-latest.js"></script>
     <script src="~/Scripts/knockout.validation.min.js"></script>
+
+    <!-- DataTables -->
+    <script src="~/Content/assets/plugins/dynaTable/jquery.dynatable.js"></script>
+    <script src="~/Scripts/CustomScripts/commAPIService.js"></script>
+    <script src="~/Scripts/GenericScript/GenericScript.js"></script>
 
     @RenderSection("scripts", required: false)
 

@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewBag.Title = "NewBooks";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section scripts{
+    <script src="~/Areas/Admin/scripts/AdDashboardScript.js"></script>
+
+}
+
+<div class="row" data-bind="click: newBooks()">
+
+    <!-- form start -->
+    <form class="form-horizontal" data-bind="submit: addnewbookCollection">
+        <div class="col-md-6">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Book Details</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Id</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" name="BkTitle" class="form-control" data-bind="value: objElement.BkId" disabled placeholder="Id">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Title</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" name="BkTitle" class="form-control" data-bind="value: objElement.BkTitle" placeholder="Title">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Auther</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" name="BkAuther" class="form-control" data-bind="value: objElement.BkAuther" placeholder="Auther">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">ISBN</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" name="BkISBN" class="form-control" data-bind="value: objElement.BkISBN" placeholder="ISBN">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Edition No.</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" name="BkEditionNumber" class="form-control" data-bind="value: objElement.BkEditionNumber" placeholder="Edition No.">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Rating</label>
+
+                        <div class="col-sm-9">
+                            <input type="number" name="BkRating" min="1" max="5" class="form-control" data-bind="value: objElement.BkRating" placeholder="Rating">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Cost</label>
+
+                        <div class="col-sm-9">
+                            <input type="number" name="BkCost" min="0" max="2000" class="form-control" data-bind="value: objElement.BkCost" placeholder="Cost">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Current</label>
+
+                        <div class="col-sm-9">
+                            <input type="number" name="BkNo_Of_Copies_Current" min="0" max="200" class="form-control" data-bind="value: objElement.BkNo_Of_Copies_Current" placeholder="Current">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Total</label>
+
+                        <div class="col-sm-9">
+                            <input type="number" name="BkNo_Of_Copies_Actual" min="0" max="200" class="form-control" data-bind="value: objElement.BkNo_Of_Copies_Actual" placeholder="Total">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Added Date</label>
+
+                        <div class="col-sm-9">
+                            <input type="text" name="CreatedDate" class="form-control" data-bind="value: objElement.CreatedDate" placeholder="Added Date" id="CreatedDate">
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <div class="col-md-6">
+            <div class="box box-warning">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Shelf Details</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="inputShelfDetails" class="col-sm-3 control-label">Shelf</label>
+
+                        <div class="col-sm-9">
+                            <select class="form-control" name="BkShlfName" data-bind="options: objElement.ShelfList[0].ShfNameList, value:objElement.BkShlfName, optionsCaption:'Select Shelf..', event:{change: shelfSelected}"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputRowDetails" class="col-sm-3 control-label">Row</label>
+
+                        <div class="col-sm-9">
+                            <select class="form-control" name="BkShlfRowName" data-bind="options: objElement.ShelfList[0].ShfRowNameList, value:objElement.BkShlfRowName, optionsCaption:'Select Row..'"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputRowDetails" class="col-sm-3 control-label">Category</label>
+
+                        <div class="col-sm-9">
+                            <select class="form-control" name="BkShlfRowName" data-bind="options: objElement.BkCategoryList, value:objElement.BkCategoryID, optionsValue:'Category_ID', optionsText: 'Category_Name', optionsCaption:'Select Category..'"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box box-warning">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Details</h3>
+                </div>
+                <!-- /.box-header -->
+                <!-- form start -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-condensed table-hover">
+                        <thead>
+                            <tr>
+                                <th>Shelf </th>
+                                <th>Free Rows </th>
+                                <th>Total Books in shelf </th>
+                                <th>Selected Row</th>
+                                <th>Available free space</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">
+                                    <span data-bind="text: objElement.BkShlfName">asd</span>
+                                </td>
+                                <td class="text-center">--</td>
+                                <td class="text-center">--</td>
+                                <td class="text-center">--</td>
+                                <td class="text-center">--</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+        <div class="col-md-12">
+            <button type="submit" class="btn btn-default">Cancel</button>
+            <button class="btn btn-success pull-right" type="submit">Save</button>
+        </div>
+    </form>
+</div>

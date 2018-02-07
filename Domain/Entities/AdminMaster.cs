@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson;
 using System;
+
 namespace Domain.Entities
 {
     public class AdminMaster : IEntity

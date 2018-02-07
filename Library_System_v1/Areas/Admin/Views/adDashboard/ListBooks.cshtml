@@ -1,0 +1,151 @@
+﻿
+@{
+    ViewBag.Title = "ListBooks";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@section scripts{
+    <script src="~/Areas/Admin/scripts/AdDashboardScript.js"></script>
+
+}
+
+
+<div class="box" data-bind="click: _booksList()">
+    <div class="box-header">
+        <div class="panel">
+            <div class="box-header with-border" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" class="collapsed">
+                <h4 class="box-title">
+                    <a>
+                        <i class="fa fa-filter"></i> Filters
+                    </a>
+                </h4>
+                <div class="col-md-2 pull-right">
+                    <a href="/Admin/adDashboard/NewBooks" class="box-title pull-right">+ Add Book</a>
+                </div>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                <div class="box-body">
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Column Name</label>
+                            <select class="form-control column_Filter" data-bind="event: { change: selectColumnNameValue }, options: objElement.Column_names,optionsText: 'Name',optionsValue: 'Id', optionsCaption: 'Choose..'">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Column Value</label>
+                            <input type="text" class="form-control" placeholder="Enter ..." disabled="">
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select class="form-control" data-bind="options: objElement.BkCategoryList,optionsText: 'Category_Name',optionsValue: 'Category_ID', optionsCaption: 'Choose..'">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Added Date:</label>
+
+                            <div class="input-group date">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" class="form-control pull-right" id="datepicker">
+                            </div>
+                            <!-- /.input group -->
+                        </div>
+                    </div>
+                    <div class="col-md-1 pull-right">
+                        <div class="form-group" style="margin: 5px 0;">
+                            <label></label>
+                            <button class="btn btn-success">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <table id="booksListTbl" class="table table-bordered table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Auther</th>
+                    <th>ISBN</th>
+                    <th>Edition No.</th>
+                    <th>Rating</th>
+                    <th>Cost</th>
+                    <th>Current</th>
+                    <th>Total</th>
+                    <th>Category</th>
+                    <th>Shelf</th>
+                    <th>Added Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ko foreach: { data: objElement.bkList, as: 'bkList' } -->
+                <tr>
+                    <td>
+                        <span data-bind="text: bkList.BkId"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: bkList.BkTitle"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: bkList.BkAuther"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: bkList.BkISBN"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: bkList.BkEditionNumber"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: bkList.BkRating"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: bkList.BkCost"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: bkList.BkNo_Of_Copies_Current"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: bkList.BkNo_Of_Copies_Actual"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: bkList.BkCategoryID"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: bkList.BKShelfID"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: bkList.CreatedDate"></span>
+                    </td>
+                </tr>
+                <!-- /ko -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Auther</th>
+                    <th>ISBN</th>
+                    <th>Edition No.</th>
+                    <th>Rating</th>
+                    <th>Cost</th>
+                    <th>Current</th>
+                    <th>Total</th>
+                    <th>Category</th>
+                    <th>Shelf</th>
+                    <th>Added Date</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+

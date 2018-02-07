@@ -14,5 +14,6 @@ namespace Domain.Entities
 
     public interface IEntity : IEntity<ObjectId>
     {
+
     }
 }

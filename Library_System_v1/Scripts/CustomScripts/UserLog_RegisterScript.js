@@ -33,7 +33,7 @@
 
         Common.Ajax('POST', url, { _logModel }, 'json', (res) => {
             if (res && res.redirectionURL) {
-                sessionStorage("logInfo", log_info, 'set');
+                //sessionStorage("logInfo", log_info, 'set');
                 location.href = res.redirectionURL;
             }
             else {
